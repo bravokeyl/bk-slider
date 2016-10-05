@@ -1,0 +1,35 @@
+.sm {
+    list-style: none;
+    width: 980px;
+    height: 400px;
+    display: block;
+    overflow: hidden
+}
+
+.sm li {
+    float: left;
+    display: inline;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    position: relative;
+}
+
+.banner_title {
+    /*background: url(../images/bannertitlebg.jpg) repeat-x left top;*/
+    font: bold 12px 'DroidSansBold';
+    color: #FFFFFF;
+    position: absolute;
+    padding: 15px 0px;
+    text-align: center;
+    width: 100%;
+    top: 340px;
+    left: 0px;
+    text-transform: uppercase;
+}
+
+.sm img {
+    height: 400px;
+    max-width: initial;
+}
