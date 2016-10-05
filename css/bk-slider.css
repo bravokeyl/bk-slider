@@ -1,6 +1,6 @@
 .sm {
     list-style: none;
-    width: 980px;
+    max-width: 980px;
     height: 400px;
     display: block;
     overflow: hidden
