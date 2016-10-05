@@ -86,7 +86,7 @@ function bk_slider_enqueue_scripts() {
   $purl = esc_url(plugins_url('/js/bk-slider.js',__FILE__));
   $style = esc_url(plugins_url('/css/bk-slider.css',__FILE__));
   wp_enqueue_script('bk-slider',$purl,array('jquery'),'5.0.2');
-  wp_enqueue_script('bk-slider',$style,array(),'5.0.2');
+  wp_enqueue_style('bk-slider',$style,array(),'5.0.2');
 }
 
 function bk_slider_cpt($n) {
