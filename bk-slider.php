@@ -103,9 +103,12 @@ function bk_slider_cpt($n) {
   while($q->have_posts()){
     $q->the_post();
     $link  = '';
-    $link .= '<a href="'.esc_url(get_permalink()).'">';
-    $link .= '<div class="banner_title">'.esc_attr(get_the_title()).'</div>';
-    $link .= '</a>';
+    // $link .= '<a href="'.esc_url(get_permalink()).'">';
+    // $link .= '<div class="banner_title">'.esc_attr(get_the_title()).'</div>';
+    // $link .= '</a>';
+		$link = '<div class="banner_title">';
+		$link .= get_the_excerpt();
+		$link .= '</div>';
     $slide_image = get_the_post_thumbnail();
     $output .= '<li>'.$link.$slide_image.'</li>';
   }
