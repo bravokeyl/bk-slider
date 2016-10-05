@@ -29,7 +29,9 @@
   left: 0px;
   text-transform: uppercase;
 }
-.banner_title a {
+.banner_title a ,
+.banner_title a:hover,
+.banner_title a:focus {
   color: #fff;
 }
 .sm img {
