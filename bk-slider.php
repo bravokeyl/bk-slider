@@ -83,10 +83,14 @@ add_shortcode( 'bk_slider', 'bk_slider_shortcode' );
 add_action('wp_enqueue_scripts','bk_slider_enqueue_scripts');
 
 function bk_slider_enqueue_scripts() {
+
   $purl = esc_url(plugins_url('/js/bk-slider.js',__FILE__));
   $style = esc_url(plugins_url('/css/bk-slider.css',__FILE__));
-  wp_enqueue_script('bk-slider',$purl,array('jquery'),'5.0.2');
-  wp_enqueue_style('bk-slider',$style,array(),'5.0.2');
+
+  if(is_front_page()) {
+    wp_enqueue_script('bk-slider',$purl,array('jquery'),'5.0.2');
+    wp_enqueue_style('bk-slider',$style,array(),'5.0.2');
+  }
 }
 
 function bk_slider_cpt($n) {
