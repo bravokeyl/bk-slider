@@ -17,7 +17,7 @@
 }
 
 .banner_title {
-    /*background: url(../images/bannertitlebg.jpg) repeat-x left top;*/
+    background: #0e75c4;
     font: bold 12px 'DroidSansBold';
     color: #FFFFFF;
     position: absolute;

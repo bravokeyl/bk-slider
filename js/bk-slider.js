@@ -18,7 +18,6 @@ jQuery(function($) {
             for (i; i < l; i++) {
                 s = sa[i];
                 s.style.width = gw + 'px';
-                console.log(s);
                 this.timer(s)
             }
         },
@@ -28,7 +27,6 @@ jQuery(function($) {
                 clearInterval(m.timer);
                 slideMenu.slide(s);
                 m.timer = setInterval(function() {
-                    console.log('Calling on mouseover');
                     slideMenu.slide(s)
                 }, t)
             }
@@ -37,13 +35,11 @@ jQuery(function($) {
                 clearInterval(m.htimer);
                 slideMenu.slide(s, true);
                 m.htimer = setInterval(function() {
-                  console.log('Calling on mouseout');
                     slideMenu.slide(s, true)
                 }, t)
             }
         },
         slide: function(s, c) {
-            console.log(s.style.width,"From slide");
             var cw = parseInt(s.style.width);
             if ((cw < sliderWidth && !c) || (cw > gw && c)) {
                 var owt = 0;
