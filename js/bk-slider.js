@@ -12,7 +12,7 @@ jQuery(function($) {
             if(m == null) {
               return;
             }else {
-              sa = $("#sm .bk-item");
+              sa = $("#sm .bk-slider-item");
               l = sa.length;
               w = m.width();
               var dw = $(document).width();
@@ -20,7 +20,16 @@ jQuery(function($) {
               var bkwrapper = $(".bk-slider-wrapper");
               if(dw <= 600) {
                 gw = w;
-                bkwrapper.css('width',w*l);
+                var co = 0;
+                setInterval(function() {
+                  if(co == l) {
+                    co = 0;
+                  }
+                   bkwrapper.css(slideMenu.doTranslate(l,w,co));
+                   //console.log("Called",$(".bk-slider-wrapper").width(),co,l);
+                   co++;
+               }, 2000)
+
               }
               ot = Math.floor((w - sliderWidth) / (l - 1));
               var i = 0;
@@ -82,6 +91,28 @@ jQuery(function($) {
                 clearInterval(m.timer);
                 clearInterval(m.htimer)
             }
+        },
+        doTranslate : function (l,w,c) {
+            return {
+                "width": 2681,
+                "-webkit-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
+                "-moz-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
+                "-o-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
+                "-ms-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
+                "transform": "translate3d(" + -w*c + "px, 0px,0px)"
+            };
+        },
+        transition3d : function (value) {
+            var base = this;
+            base.css(base.doTranslate(value));
+        },
+        addCssSpeed : function (speed) {
+            return {
+                "-webkit-transition": "all " + speed + "ms ease",
+                "-moz-transition": "all " + speed + "ms ease",
+                "-o-transition": "all " + speed + "ms ease",
+                "transition": "all " + speed + "ms ease"
+            };
         }
     };
   }();

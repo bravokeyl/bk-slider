@@ -112,7 +112,7 @@ function bk_slider_cpt($n) {
 		$link .= get_the_excerpt();
 		$link .= '</div>';
     $slide_image = get_the_post_thumbnail();
-    $output .= '<li class="bk-item">'.$link.$slide_image.'</li>';
+    $output .= '<li class="bk-slider-item">'.$link.$slide_image.'</li>';
   }
   return $output;
 }
