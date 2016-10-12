@@ -8,14 +8,20 @@ jQuery(function($) {
             sp = s;
             sliderWidth = sw;
             t = mt;
-            m = document.getElementById(sm);
+            m = $(sm);
             if(m == null) {
               return;
             }else {
-              sa = m.getElementsByTagName('li');
+              sa = $("#sm .bk-item");
               l = sa.length;
-              w = m.offsetWidth;
+              w = m.width();
+              var dw = $(document).width();
               gw = w / l;
+              var bkwrapper = $(".bk-slider-wrapper");
+              if(dw <= 600) {
+                gw = w;
+                bkwrapper.css('width',w*l);
+              }
               ot = Math.floor((w - sliderWidth) / (l - 1));
               var i = 0;
               for (i; i < l; i++) {
@@ -80,5 +86,5 @@ jQuery(function($) {
     };
   }();
 
-  slideMenu.build('sm',600,10,10);
+  slideMenu.build('#sm',600,10,10);
 });

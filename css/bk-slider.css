@@ -41,3 +41,19 @@
 .sm img:hover {
   cursor: pointer;
 }
+
+.bk-slider-outer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.bk-slider-wrapper {
+  position: relative;
+}
+@media only screen and (max-width: 485px) {
+  .sm,
+  .sm img {
+    max-width: 100%;
+    height: auto;
+  }
+}

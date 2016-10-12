@@ -73,9 +73,11 @@ if ( ! function_exists('bk_slider_register_post_type') ) {
 function bk_slider_shortcode( $atts ) {
 	$atts = shortcode_atts( array('n' => '4'), $atts, 'bk_slider' );
   $n = intval($atts['n']);
-  $output  = '<ul id="sm" class="sm">';
+  $output  = '<div id="sm" class="sm bk-slider-outer">';
+	$output  .= '<div class="bk-slider-wrapper">';
   $output .= bk_slider_get_slides($n);
-  $output .= '</ul>';
+  $output .= '</div>';
+	$output .= '</div>';
   return $output;
 }
 add_shortcode( 'bk_slider', 'bk_slider_shortcode' );
@@ -110,7 +112,7 @@ function bk_slider_cpt($n) {
 		$link .= get_the_excerpt();
 		$link .= '</div>';
     $slide_image = get_the_post_thumbnail();
-    $output .= '<li>'.$link.$slide_image.'</li>';
+    $output .= '<li class="bk-item">'.$link.$slide_image.'</li>';
   }
   return $output;
 }
