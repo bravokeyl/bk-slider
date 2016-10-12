@@ -28,7 +28,7 @@ jQuery(function($) {
                    bkwrapper.css(slideMenu.doTranslate(l,w,co));
                    //console.log("Called",$(".bk-slider-wrapper").width(),co,l);
                    co++;
-               }, 2000)
+               }, 5000)
 
               }
               ot = Math.floor((w - sliderWidth) / (l - 1));
