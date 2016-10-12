@@ -9,16 +9,20 @@ jQuery(function($) {
             sliderWidth = sw;
             t = mt;
             m = document.getElementById(sm);
-            sa = m.getElementsByTagName('li');
-            l = sa.length;
-            w = m.offsetWidth;
-            gw = w / l;
-            ot = Math.floor((w - sliderWidth) / (l - 1));
-            var i = 0;
-            for (i; i < l; i++) {
-                s = sa[i];
-                s.style.width = gw + 'px';
-                this.timer(s)
+            if(m == null) {
+              return;
+            }else {
+              sa = m.getElementsByTagName('li');
+              l = sa.length;
+              w = m.offsetWidth;
+              gw = w / l;
+              ot = Math.floor((w - sliderWidth) / (l - 1));
+              var i = 0;
+              for (i; i < l; i++) {
+                  s = sa[i];
+                  s.style.width = gw + 'px';
+                  this.timer(s)
+              }
             }
         },
         timer: function(s) {
