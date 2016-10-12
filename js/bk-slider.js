@@ -95,16 +95,13 @@ jQuery(function($) {
         doTranslate : function (l,w,c) {
             return {
                 "width": 2681,
+                "display": "block",
                 "-webkit-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
                 "-moz-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
                 "-o-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
                 "-ms-transform": "translate3d(" + -w*c + "px, 0px, 0px)",
                 "transform": "translate3d(" + -w*c + "px, 0px,0px)"
             };
-        },
-        transition3d : function (value) {
-            var base = this;
-            base.css(base.doTranslate(value));
         },
         addCssSpeed : function (speed) {
             return {

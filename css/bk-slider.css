@@ -69,4 +69,7 @@
     max-width: 100%;
     height: auto;
   }
+  .bk-slider-wrapper {
+    display: none;
+  }
 }
